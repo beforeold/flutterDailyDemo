@@ -1,0 +1,6 @@
+name: class_dart
+description: class_dart yaml
+dependencies:
+  http: ^0.13.5
+environment:
+  sdk: '>=2.10.0 <3.0.0'
