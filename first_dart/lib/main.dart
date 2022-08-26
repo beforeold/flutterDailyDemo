@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+// void main() {
+//   runApp(const MyApp());
+// }
+
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -21,20 +23,36 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    return MyHomePageState();
+  }
+}
+
+class MyHomePageState extends State<MyHomePage> {
+  bool? flag = true;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("first_flutter")),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Checkbox(value: true, onChanged: (value) => print(value)),
+      appBar: AppBar(
+        title: const Text("first_dart"),
+    ),
+      body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, 
+            children:[
+              Checkbox(
+                  value: flag, onChanged: (value)
+              => setState(()
+              => flag = value
+              )),
               const Text("同意协议")
             ],
-          ),
-        ),
+      )
+    ),
     );
   }
 }
