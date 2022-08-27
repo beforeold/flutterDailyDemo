@@ -15,13 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text("first_dart")),
-        body: MyHomePage(),
-      )
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: MyHomePage(),
     );
   }
 }
@@ -36,9 +31,26 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   bool? flag = true;
-  
+
   @override
   Widget build(BuildContext context) {
-    return const Text("Hello world");
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("first_dart"),
+      ),
+      body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:[
+              Checkbox(
+                  value: flag, onChanged: (value)
+              => setState(()
+              => flag = value
+              )),
+              const Text("同意协议")
+            ],
+          )
+      ),
+    );
   }
 }
