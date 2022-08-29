@@ -39,41 +39,19 @@ class MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Center(
-      child: CounterWidget(
-        count,
-        child: Column(
-          children: [
-            STLWidget(),
-            STFWidget(),
-            ElevatedButton(
-              child: Icon(Icons.add),
-              onPressed: () {
-                setState(() {
-                  count += 1;
-                });
-              },
-            )
-          ],
-        ),
+      child: Column(
+        children: [
+          STLWidget(),
+          STFWidget(),
+          ElevatedButton(
+            onPressed: () { count += 1; },
+            child: Icon(Icons.add),
+          )
+        ],
       ),
     );
-  }
-}
-
-class CounterWidget extends InheritedWidget {
-  final int count;
-  const CounterWidget(this.count, {Key? key, required Widget child}):
-        super(key: key, child: child);
-
-  static int countOf(BuildContext context) {
-    CounterWidget? counter = context.dependOnInheritedWidgetOfExactType();
-    return counter?.count ?? 0;
-  }
-
-  @override
-  bool updateShouldNotify(CounterWidget oldWidget) {
-    return false; // oldWidget.count != count;
   }
 }
 
@@ -82,10 +60,7 @@ class STLWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int count = CounterWidget.countOf(context);
-    return Container(
-      child: Text("stl count: $count")
-    );
+    return Container();
   }
 }
 
@@ -99,21 +74,12 @@ class STFWidget extends StatefulWidget {
 class _STFWidgetState extends State<STFWidget> {
   @override
   Widget build(BuildContext context) {
-    int count = CounterWidget.countOf(context);
-    return Container(
-      child: Text("STF count $count"),
-    );
+    return Container();
   }
 
   @override
   void didUpdateWidget(covariant STFWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    print("didUpdateWidget2");
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    print("didChangeDependencies");
+    print("didUpdateWidget");
   }
 }
