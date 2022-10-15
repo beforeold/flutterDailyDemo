@@ -10,6 +10,7 @@ void main(List<String> args) async {
 
 void test_http() async {
   var url = Uri.https('example.com', 'whatsit/create');
+  print("request: $url");
   var response =
       await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
   print('Response status: ${response.statusCode}');
