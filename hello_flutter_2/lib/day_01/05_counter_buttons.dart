@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage()
+        home: MyHomePage()
     );
   }
 }
@@ -65,7 +65,7 @@ class _MyHomeBodyState extends State<MyHomeBody> {
               setState(() {
                 count += 1;
               });
-        }),
+            }),
         RaisedButton(
             child: Text("-"),
             color: Colors.green,
