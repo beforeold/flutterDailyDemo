@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage()
+        home: MyHomePage()
     );
   }
 }
@@ -60,7 +60,7 @@ class _DynamicHomeBodyState extends State<DynamicHomeBody> {
   _DynamicHomeBodyState() : super() {
     print("3 _DynamicHomeBodyState init");
   }
-  
+
   @override
   void initState() {
     super.initState();
@@ -97,7 +97,7 @@ class _DynamicHomeBodyState extends State<DynamicHomeBody> {
               setState(() {
                 count += 1;
               });
-        }),
+            }),
         RaisedButton(
             child: Text("-"),
             color: Colors.green,
