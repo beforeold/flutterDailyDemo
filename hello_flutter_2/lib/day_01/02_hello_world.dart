@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage()
+        home: MyHomePage()
     );
   }
 }
@@ -27,30 +27,16 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class MyHomeBody extends StatefulWidget {
+class MyHomeBody extends StatelessWidget {
   const MyHomeBody({Key? key}) : super(key: key);
-
-  @override
-  State<MyHomeBody> createState() => _MyHomeBodyState();
-}
-
-class _MyHomeBodyState extends State<MyHomeBody> {
-  var flag = false;
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Checkbox(value: flag, onChanged: (value) {
-            setState(() {
-              flag = value ?? false;
-            });
-          }),
-          Text("请阅读和同意用户使用条款")
-        ],
-      ),
+        child: Text(
+          "Hello world",
+          style: TextStyle(fontSize: 25),
+        )
     );
   }
 }
